@@ -11,11 +11,23 @@ router.get('/', function(req, res) {
 });
 
 router.get('/people', function(req, res) {
-  res.json(people);
+  res.json({people: people});
 });
 
 router.get('/heists', function(req, res) {
-  res.json(heists);
+  res.json({heists: heists});
+});
+
+router.get('/roles', function(req, res) {
+  res.json({roles: roles});
+});
+
+router.get('/map_heists_people', function(req, res) {
+  res.json({map_heists_people: map_heists_people});
+});
+
+router.get('/map_people_roles', function(req, res) {
+  res.json({map_people_roles: map_people_roles});
 });
 
 module.exports = router;
