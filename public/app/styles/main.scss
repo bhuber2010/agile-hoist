@@ -37,7 +37,32 @@ body {
 }
 
 .header-space{
-  padding-top: 20px;
+  padding-top: 40px;
+}
+
+.flex-well {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.row {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.flex-pannel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.role-info {
+
+}
+
+.role-pick-img {
+  max-height: 95px;
 }
 
 /* Custom page footer */
