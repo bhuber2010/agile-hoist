@@ -32,6 +32,11 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/picker', {
+        templateUrl: 'views/picker.html',
+        controller: 'PickerCtrl',
+        controllerAs: 'picker'
+      })
       .otherwise({
         redirectTo: '/'
       });
