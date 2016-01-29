@@ -1,25 +1,33 @@
-<div class="container header-space">
+<div class="container-fluid header-space">
   <h1 class="text-center">Choose Your Team</h1>
   <hr>
-  <!-- <form name="movieSearchForm">
-    <fieldset class="text-center">
-      <label class="" for="search">Enter a movie by title</label>
-      <br>
-      <input type="text" required ng-model="omdb.searchInput" required name="search" value="" placeholder="Matrix">
-      <button type="submit" ng-disabled="movieSearchForm.$invalid" ng-click="omdb.titleSearch(omdb.searchInput, movieSearchForm)" class="btn btn-primary">Search</button>
-    </fieldset>
-  </form> -->
+  <div class="well">
+    <select ng-model="picker.selectedHeist">
+      <option ng-repeat="heist in picker.heists" value="{{heist.rating_required}}">{{heist.name}}</option>
+    </select>
+    <button class="btn btn-primary" type="submit" name="run-heist" ng-click="picker.runHeist(picker.selectedHeist, picker.heist)">Go steal some shit!</button>
+  </div>
+  <div class="jumbotron" ng-show="picker.heist.run">
+    <h1>{{picker.heist.result}}</h1>
+  </div>
   <div class="row">
-    <div class="col-md-6" ng-repeat="person in picker.people">
+    <div class="col-md-6" ng-repeat="role in picker.roles">
       <div class="panel panel-default">
-        <div class="panel-body movie-box">
-          <a ng-click="">
-            <h4>
-              {{}}<br>
-              <small>{{}}</small>
-            </h4>
-          </a>
-          <img ng-src="{{}}" alt="" />
+        <div class="panel-body">
+          <h4>
+            <a ng-click="">{{role.name}}</a>
+            <br>
+            <small>{{role.description}}</small>
+          </h4>
+          <h3>
+            Your pick:
+            <select name="person" ng-model="role.pick" ng-options="person.name disable when person.selected for person in picker.people" ng-hide="role.confirmed">
+              <!-- <option ng-repeat="person in picker.people" value="{{person}}">{{person.name}}</option> -->
+            </select>
+            <span ng-show="role.confirmed">{{role.pickName}}</span>
+            <button class="btn btn-primary" ng-hide="role.confirmed" ng-disabled="role.confirmed" type="button" name="make-pick" ng-click="picker.confirmPick(role)">Confirm Pick</button>
+            <button class="btn btn-warning" ng-show="role.confirmed"  type="button" name="make-pick" ng-click="picker.editRole(role)">Edit Pick</button>
+          </h3>
         </div>
       </div>
     </div>
