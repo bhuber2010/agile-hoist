@@ -1,0 +1,46 @@
+<div class="container-fluid header-space">
+  <h1 class="text-center">Choose Your Team</h1>
+  <hr>
+  <div class="well flex-well">
+    <div class="">
+      <label class="" for="heist">Select your heist:</label>
+      <select name="heist" ng-model="picker.selectedHeist">
+        <option ng-repeat="heist in picker.heists" value="{{heist.rating_required}}">{{heist.name}}</option>
+      </select>
+    </div>
+    <button class="btn btn-danger" type="submit" name="run-heist" ng-click="picker.runHeist(picker.selectedHeist, picker.heist)">Go steal some shit!</button>
+    <button class="btn btn-info" type="button" name="reset" ng-click="picker.resetHeist()">Run a new gang</button>
+  </div>
+  <div class="jumbotron" ng-show="picker.heist.run">
+    <h1>{{picker.heist.result}}</h1>
+    <img ng-src="{{picker.heist.resultPic}}" alt="" />
+  </div>
+  <div class="row">
+    <div class="col-md-6" ng-repeat="role in picker.roles">
+      <div class="panel panel-default">
+        <div class="panel-body flex-pannel">
+          <div class="role-info">
+            <h4>
+              <a class="role-name" ng-click="">{{role.name}}</a>
+              <br>
+              <p class="text-muted">{{role.description}}</p>
+            </h4>
+            <h3>
+              Your pick:
+              <select name="person" ng-model="role.pick" ng-options="person.name disable when person.selected for person in picker.people" ng-hide="role.confirmed">
+                <!-- <option ng-repeat="person in picker.people" value="{{person}}">{{person.name}}</option> -->
+              </select>
+              <span class="pick-name" ng-show="role.confirmed">{{role.pickName}}</span>
+              <button class="btn btn-primary" ng-hide="role.confirmed" ng-disabled="role.confirmed" type="button" name="make-pick" ng-click="picker.confirmPick(role)">Confirm Pick</button>
+              <button disabled class="btn btn-warning" ng-show="role.confirmed"  type="button" name="make-pick" ng-click="picker.editRole(role)">Edit Pick</button>
+            </h3>
+          </div>
+          <div class="">
+            <img class="role-pick-img" ng-src="{{role.pickImg}}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
