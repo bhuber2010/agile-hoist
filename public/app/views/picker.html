@@ -21,16 +21,16 @@
         <div class="panel-body flex-pannel">
           <div class="role-info">
             <h4>
-              <a ng-click="">{{role.name}}</a>
+              <a class="role-name" ng-click="">{{role.name}}</a>
               <br>
-              <small>{{role.description}}</small>
+              <p class="text-muted">{{role.description}}</p>
             </h4>
             <h3>
               Your pick:
               <select name="person" ng-model="role.pick" ng-options="person.name disable when person.selected for person in picker.people" ng-hide="role.confirmed">
                 <!-- <option ng-repeat="person in picker.people" value="{{person}}">{{person.name}}</option> -->
               </select>
-              <span ng-show="role.confirmed">{{role.pickName}}</span>
+              <span class="pick-name" ng-show="role.confirmed">{{role.pickName}}</span>
               <button class="btn btn-primary" ng-hide="role.confirmed" ng-disabled="role.confirmed" type="button" name="make-pick" ng-click="picker.confirmPick(role)">Confirm Pick</button>
               <button disabled class="btn btn-warning" ng-show="role.confirmed"  type="button" name="make-pick" ng-click="picker.editRole(role)">Edit Pick</button>
             </h3>

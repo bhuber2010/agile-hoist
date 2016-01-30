@@ -46,6 +46,14 @@ body {
   align-items: center;
 }
 
+.role-name {
+  font-size: 125%;
+}
+
+.pick-name {
+  color: red;
+}
+
 .row {
   margin-left: 3%;
   margin-right: 3%;
@@ -62,7 +70,7 @@ body {
 }
 
 .role-pick-img {
-  max-height: 95px;
+  max-height: 115px;
 }
 
 /* Custom page footer */
