@@ -9,21 +9,24 @@
  */
 angular.module('agileHoistApp')
   .service('pickerData', function ($resource, lodash) {
-    var people = $resource('http://10.6.81.103:3000/people').get();
+
+    var apihost = 'localhost';
+
+    var people = $resource('http://' + apihost + ':3000/people').get();
     var peoplePromise = people.$promise
       .then(function(data) {
         return data;
       }
     );
 
-    var roles = $resource('http://10.6.81.103:3000/roles').get();
+    var roles = $resource('http://' + apihost + ':3000/roles').get();
     var rolesPromise = roles.$promise
       .then(function(data) {
         return data;
       }
     );
 
-    var mapPeopleRoles = $resource('http://10.6.81.103:3000/map_people_roles').get();
+    var mapPeopleRoles = $resource('http://' + apihost + ':3000/map_people_roles').get();
     var mapPeopleRolesPromise = mapPeopleRoles.$promise
       .then(function(data) {
         // console.log(data.map_people_roles);
@@ -31,7 +34,7 @@ angular.module('agileHoistApp')
       }
     );
 
-    var heists = $resource('http://10.6.81.103:3000/heists').get();
+    var heists = $resource('http://' + apihost + ':3000/heists').get();
     var heistsPromise = heists.$promise
       .then(function(data) {
         console.log(data.heists);

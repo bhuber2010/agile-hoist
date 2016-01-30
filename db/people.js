@@ -2,18 +2,18 @@ var people =
   [
     {
       name: "Brian Huber",
-      image_url: "http://10.6.81.103:3000/images/Brian.jpg",
+      image_url: "http://localhost:3000/images/Brian.jpg",
       skills: {
         "Get Away Driver":3,"Crowd Control":1,"Muscle":2,"Leader/Planner":5,"Initiator":4}
     },
     {
       name: "J. Drill",
-      image_url: "http://10.6.81.103:3000/images/J.jpg",
+      image_url: "http://localhost:3000/images/J.jpg",
       skills: {"Get Away Driver":4,"Crowd Control":2,"Muscle":1,"Leader/Planner":5,"Initiator":3}
     },
     {
       name: "Natalie Drill",
-      image_url: "http://10.6.81.103:3000/images/Natalie.jpg",
+      image_url: "http://localhost:3000/images/Natalie.jpg",
       skills: {"Get Away Driver":1,"Crowd Control":4,"Muscle":1,"Leader/Planner":1,"Initiator":5}
     },
     {
