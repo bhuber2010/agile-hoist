@@ -6,7 +6,6 @@
  ```
  npm install
  gulp
-
  ```
 
 - cd into angular folder, install dependencies (requires [Compass](http://compass-style.org/install/) to be installed) & run grunt serve
