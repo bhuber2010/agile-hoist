@@ -11,8 +11,8 @@
 - cd into angular folder, install dependencies (requires [Compass](http://compass-style.org/install/) to be installed) & run grunt serve
 
  ```
+ cd angular
  npm install
  bower install
- cd angular
  grunt serve
  ```
